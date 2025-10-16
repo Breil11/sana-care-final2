@@ -31,11 +31,19 @@ uvicorn server:app --reload --host 0.0.0.0 --port 8001
 
 # Frontend  
 cd frontend
+
+# Avec yarn (recommandé)
 yarn install
 yarn start
+
+# Avec npm (Node v18+)
+npm install --legacy-peer-deps
+npm start
 ```
 
 Application accessible sur `http://localhost:3000`
+
+**Note** : Pour npm avec Node v18, voir [INSTALLATION_NPM.md](INSTALLATION_NPM.md)
 
 ## 👥 Rôles
 
