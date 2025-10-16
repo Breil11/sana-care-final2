@@ -23,27 +23,44 @@ Application complète de gestion pour professionnels de santé (infirmiers, aide
 
 ## 🚀 Installation rapide
 
+### Installation automatique (recommandé)
+
+**Windows** :
+```powershell
+.\install-windows.ps1
+```
+
+**Linux/Mac** :
 ```bash
-# Backend
+chmod +x install.sh
+./install.sh
+```
+
+### Installation manuelle
+
+**Backend** :
+```bash
 cd backend
 pip install -r requirements.txt
 uvicorn server:app --reload --host 0.0.0.0 --port 8001
+```
 
-# Frontend  
+**Frontend** :
+```bash
 cd frontend
-
-# Avec yarn (recommandé)
-yarn install
-yarn start
 
 # Avec npm (Node v18+)
 npm install --legacy-peer-deps
 npm start
+
+# Avec yarn
+yarn install
+yarn start
 ```
 
 Application accessible sur `http://localhost:3000`
 
-**Note** : Pour npm avec Node v18, voir [INSTALLATION_NPM.md](INSTALLATION_NPM.md)
+**Erreur npm ERESOLVE ?** → Voir [FIX-NPM-ERROR.md](FIX-NPM-ERROR.md)
 
 ## 👥 Rôles
 
