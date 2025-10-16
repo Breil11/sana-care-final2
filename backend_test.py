@@ -63,8 +63,10 @@ class SanaCareAPITester:
         print("\n🔍 Testing User Registration...")
         
         # Test regular user registration
+        timestamp = datetime.now().strftime('%H%M%S')
+        self.test_user_email = f"test_nurse_{timestamp}@test.com"
         user_data = {
-            "email": f"test_nurse_{datetime.now().strftime('%H%M%S')}@test.com",
+            "email": self.test_user_email,
             "password": "TestPass123!",
             "first_name": "Marie",
             "last_name": "Dupont",
@@ -80,8 +82,9 @@ class SanaCareAPITester:
             self.log_test("User Registration", False, f"Status: {status}, Response: {response}")
 
         # Test admin registration
+        self.admin_user_email = f"admin_{timestamp}@test.com"
         admin_data = {
-            "email": f"admin_{datetime.now().strftime('%H%M%S')}@test.com",
+            "email": self.admin_user_email,
             "password": "AdminPass123!",
             "first_name": "Admin",
             "last_name": "Test",
