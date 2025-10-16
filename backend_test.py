@@ -104,10 +104,10 @@ class SanaCareAPITester:
         print("\n🔍 Testing User Login...")
         
         # First approve the regular user (using admin if available)
-        if self.admin_user_id:
+        if self.admin_user_id and self.admin_user_email:
             # Login as admin first
             admin_login_data = {
-                "email": f"admin_{datetime.now().strftime('%H%M%S')}@test.com",
+                "email": self.admin_user_email,
                 "password": "AdminPass123!"
             }
             success, response, status = self.make_request('POST', 'auth/login', admin_login_data, expected_status=200)
@@ -125,7 +125,7 @@ class SanaCareAPITester:
 
         # Test regular user login
         user_login_data = {
-            "email": f"test_nurse_{datetime.now().strftime('%H%M%S')}@test.com",
+            "email": self.test_user_email,
             "password": "TestPass123!"
         }
         
