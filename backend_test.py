@@ -112,8 +112,8 @@ class SanaCareAPITester:
                 
                 # Approve the regular user
                 if self.test_user_id:
-                    success, _, status = self.make_request('PATCH', f'users/{self.test_user_id}/status', 
-                                                        {"status": "approved"}, token=self.admin_token, expected_status=200)
+                    success, _, status = self.make_request('PATCH', f'users/{self.test_user_id}/status?status=approved', 
+                                                        None, token=self.admin_token, expected_status=200)
                     self.log_test("User Approval", success, f"Status: {status}" if not success else "")
             else:
                 self.log_test("Admin Login", False, f"Status: {status}, Response: {response}")
