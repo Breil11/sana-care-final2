@@ -11,6 +11,8 @@ class SanaCareAPITester:
         self.admin_token = None
         self.test_user_id = None
         self.admin_user_id = None
+        self.test_user_email = None
+        self.admin_user_email = None
         self.institution_id = None
         self.schedule_id = None
         self.shift_id = None
